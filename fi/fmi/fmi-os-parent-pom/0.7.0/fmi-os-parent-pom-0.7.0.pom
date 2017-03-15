@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fi.fmi</groupId>
+  <artifactId>fmi-os-parent-pom</artifactId>
+  <version>0.7.0</version>
+  <packaging>pom</packaging>
+
+  <name>FMI OS Root Parent POM</name>
+  <description>The root POM for for Open Source maven projects from FMI</description>
+  <url>https://github.com/${github-repo-owner}/${project.artifactId}</url>
+
+  <organization>
+    <name>FMI OpenSource community</name>
+    <url>http://ilmatieteenlaitos.fi</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <comments>
+        Copyright (c) 2017 Finnish Meteorological Institute
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+      </comments>
+      <distribution>repo</distribution>
+      <name>MIT License</name>
+      <url />
+    </license>
+  </licenses>
+
+  <ciManagement>
+    <system>Travis CI</system>
+    <!-- url>${travis.job.url}</url -->
+  </ciManagement>
+
+  <scm>
+    <connection>${scm-url}</connection>
+    <developerConnection>${scm-url}</developerConnection>
+    <url>${scm-web-url}</url>
+    <tag>fmi-os-parent-pom-0.7.0</tag>
+  </scm>
+
+  <!-- Two-phase release to github as defined at http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github-->
+  <distributionManagement>
+    <repository>
+      <id>internal.repo</id>
+      <name>Temporary Staging Repository</name>
+      <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+  </distributionManagement>
+
+
+  <properties>
+    <!-- Most of these SHOULD NOT be overriden in child POMs -->
+    <project.scm.id>github</project.scm.id>
+    <github-repo-owner>ilkkarinne</github-repo-owner>
+    <github.global.server>github</github.global.server>
+    <github-mvn-release-repo>fmi-os-mvn-repo</github-mvn-release-repo>
+    <github-mvn-snapshot-repo>fmi-os-mvn-snapshot-repo</github-mvn-snapshot-repo>
+    <scm-url>scm:git:https://github.com/${github-repo-owner}/${project.artifactId}.git/</scm-url>
+    <scm-web-url>https://github.com/${github-repo-owner}/${project.artifactId}</scm-web-url>
+
+    <!-- site-url>file:///var/doc/mavensites/${project.artifactId}/${project.version}</site-url -->
+
+    <!-- This is one of those magic properties available to builds. Format the value to a more standard format -->
+    <!-- http://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Available_Variables -->
+    <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ssZ</maven.build.timestamp.format>
+    <!-- Get rid of that pesky encoding warning -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <java.version>1.8</java.version>
+    <!-- We default to java.version in source and target versions. -->
+    <!-- A child project may thus override either source or target version, -->
+    <!-- or override them both by overriding property java.version. -->
+    <maven-compiler-plugin.source.version>${java.version}</maven-compiler-plugin.source.version>
+    <maven-compiler-plugin.target.version>${java.version}</maven-compiler-plugin.target.version>
+
+    <!-- Maven plugin versions for pluginManagement section -->
+    <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
+    <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+
+    <maven-antrun-plugin.version>1.7</maven-antrun-plugin.version>
+    <!-- antrun plugin's sshexec target needs this -->
+    <ant-jsch.version>1.9.2</ant-jsch.version>
+    <maven-assembly-plugin.version>2.4</maven-assembly-plugin.version>
+    <assertj-assertions-generator-maven-plugin.version>1.1.0</assertj-assertions-generator-maven-plugin.version>
+    <build-helper-maven-plugin.version>1.8</build-helper-maven-plugin.version>
+    <buildnumber-maven-plugin.version>1.2</buildnumber-maven-plugin.version>
+    <maven-bundle-plugin.version>2.4.0</maven-bundle-plugin.version>
+    <maven-changelog-plugin.version>2.2</maven-changelog-plugin.version>
+    <maven-clean-plugin.version>2.5</maven-clean-plugin.version>
+    <cobertura-maven-plugin.version>2.6</cobertura-maven-plugin.version>
+    <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+    <maven-dependency-plugin.version>2.8</maven-dependency-plugin.version>
+    <maven-deploy-plugin.version>2.8.1</maven-deploy-plugin.version>
+    <maven-ear-plugin.version>2.8</maven-ear-plugin.version>
+    <maven-ejb-plugin.version>2.3</maven-ejb-plugin.version>
+    <maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
+    <maven-enforcer-plugin.version>1.3.1</maven-enforcer-plugin.version>
+    <findbugs-maven-plugin.version>2.5.3</findbugs-maven-plugin.version>
+    <maven-install-plugin.version>2.5.1</maven-install-plugin.version>
+    <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+    <maven-javadoc-plugin.version>2.9.1</maven-javadoc-plugin.version>
+    <jdepend-maven-plugin.version>2.0-beta-2</jdepend-maven-plugin.version>
+    <!-- We don't use the newest 2.4, because <https://jira.fmi.fi/browse/INFRA-277> -->
+    <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+    <l10n-maven-plugin.version>1.0-alpha-2</l10n-maven-plugin.version>
+    <maven-linkcheck-plugin.version>1.1</maven-linkcheck-plugin.version>
+    <maven-plugin-plugin.version>3.2</maven-plugin-plugin.version>
+    <maven-project-info-reports-plugin.version>2.7</maven-project-info-reports-plugin.version>
+    <maven-rar-plugin.version>2.3</maven-rar-plugin.version>
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+    <maven-resources-plugin.version>2.6</maven-resources-plugin.version>
+    <maven-shade-plugin.version>2.2</maven-shade-plugin.version>
+    <maven-site-plugin.version>3.3</maven-site-plugin.version>
+    <!-- Doxia modules enable documentation syntaxes to be used in documentation. -->
+    <!-- They are dependencies of maven-site-plugin -->
+    <doxia-module-confluence.version>1.5</doxia-module-confluence.version>
+    <maven-doxia-module-markdown.version>1.3</maven-doxia-module-markdown.version>
+    <doxia-module-xhtml.version>1.5</doxia-module-xhtml.version>
+    <maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+    <maven-surefire-plugin.version>2.16</maven-surefire-plugin.version>
+    <maven-surefire-report-plugin.version>2.16</maven-surefire-report-plugin.version>
+    <taglist-maven-plugin.version>2.4</taglist-maven-plugin.version>
+    <tomcat6-maven-plugin.version>2.2</tomcat6-maven-plugin.version>
+    <tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
+    <versions-maven-plugin.version>2.1</versions-maven-plugin.version>
+    <maven-war-plugin.version>2.4</maven-war-plugin.version>
+    <m2e-lifecycle-mapping.version>1.0.0</m2e-lifecycle-mapping.version>
+
+    <assertj-core.version>1.5.0</assertj-core.version>
+    <fmi-common-test.version>0.1-SNAPSHOT</fmi-common-test.version>
+    <fongo.version>1.3.0</fongo.version>
+    <hamcrest.version>1.3</hamcrest.version>
+    <junit.version>4.11</junit.version>
+    <JUnitParams.version>1.0.2</JUnitParams.version>
+    <mockito.version>1.9.5</mockito.version>
+    <powermock.version>1.5.3</powermock.version>
+
+
+    <groovy.version>2.1.0</groovy.version>
+    <logback.version>1.0.13</logback.version>
+    <log4j.version>1.2.14</log4j.version>
+    <slf4j.version>1.7.5</slf4j.version>
+    <sysout-over-slf4j.version>1.0.2</sysout-over-slf4j.version>
+
+
+    <freemarker.version>2.3.20</freemarker.version>
+    <gson.version>2.2.4</gson.version>
+    <guava.version>16.0</guava.version>
+    <jackson.version>2.1.3</jackson.version>
+    <jide.version>3.2.2</jide.version>
+    <joda-time.version>2.3</joda-time.version>
+    <practicalxml.version>1.1.17</practicalxml.version>
+    <velocity.version>1.7</velocity.version>
+
+    <!-- Spring and related -->
+    <aspectj.version>1.7.0</aspectj.version>
+    <spring.version>3.1.2.RELEASE</spring.version>
+    <spring-data.version>1.1.1.RELEASE</spring-data.version>
+    <spring-integration.version>2.2.1.RELEASE</spring-integration.version>
+    <spring-rabbit.version>1.2.0.RELEASE</spring-rabbit.version>
+    <spring-security.version>3.1.2.RELEASE</spring-security.version>
+
+
+    <!-- Quality plugins -->
+    <findbugs-jsr305.version>2.0.3</findbugs-jsr305.version>
+    <findbugs-annotations.version>2.0.3</findbugs-annotations.version>
+
+    <!-- Github site plugin for Github mvn repo deployment -->
+    <site-maven-plugin.version>0.11</site-maven-plugin.version>
+
+
+    <maven-bundle-plugin.manifest.path>${project.build.outputDirectory}/META-INF/MANIFEST.MF</maven-bundle-plugin.manifest.path>
+
+    <!-- This is just because HEAD http://search.maven.org/ responds with 404 -->
+    <maven-linkcheck-plugin.httpMethod>GET</maven-linkcheck-plugin.httpMethod>
+
+    <!-- The following two properties are empty intentionally -->
+    <!-- They are quite environment specific and should be set via activating a profile, for instance -->
+    <maven-javadoc-plugin.javadoc.version />
+    <maven-javadoc-plugin.javadoc.executable />
+
+    <!-- This MUST point to an existing assembly descriptor. -->
+    <!-- You may leave it as-is, and place a file at the path below, or override the property -->
+    <!-- and place your descriptor at that path. -->
+    <maven-assembly-plugin.descriptor>src/assembly/zip.xml</maven-assembly-plugin.descriptor>
+    <!-- This MUST be replaced in the child POM -->
+    <assembly.mainClass>fi.fmi.nonexisting.ReplaceThis</assembly.mainClass>
+    <!-- By default we want to include dependencies as libraries... -->
+    <assembly.addClasspath>true</assembly.addClasspath>
+    <!-- in a sub-folder "lib". -->
+    <assembly.classpathPrefix>lib</assembly.classpathPrefix>
+
+
+    <maven-project-info-reports-plugin.showAvatarImages>false</maven-project-info-reports-plugin.showAvatarImages>
+
+
+    <integration-test-src-path>src/test-integration/java</integration-test-src-path>
+    <integration-test-resource-path>src/test-integration/resources</integration-test-resource-path>
+
+
+  </properties>
+
+
+
+  <build>
+    <pluginManagement>
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven-antrun-plugin.version}</version>
+          <dependencies>
+            <dependency>
+              <!-- For the sshexec target -->
+              <groupId>org.apache.ant</groupId>
+              <artifactId>ant-jsch</artifactId>
+              <version>${ant-jsch.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${maven-assembly-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+          <version>${assertj-assertions-generator-maven-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${build-helper-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>add-integration-test-source</id>
+              <phase>generate-test-sources</phase>
+              <goals>
+                <goal>add-test-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>${integration-test-src-path}</source>
+                </sources>
+              </configuration>
+            </execution>
+            <execution>
+              <id>add-resource</id>
+              <phase>generate-test-resources</phase>
+              <goals>
+                <goal>add-test-resource</goal>
+              </goals>
+              <configuration>
+                <resources>
+                  <resource>
+                    <directory>${integration-test-resource-path}</directory>
+                    <targetPath>${maven.test.dest}</targetPath>
+                  </resource>
+                </resources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>buildnumber-maven-plugin</artifactId>
+          <version>${buildnumber-maven-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <version>${maven-bundle-plugin.version}</version>
+          <executions>
+            <execution>
+              <!-- We use the manifest goal as not to mandate using packaging "bundle" for all jars -->
+              <id>bundle-manifest</id>
+              <phase>process-classes</phase>
+              <goals>
+                <goal>manifest</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${maven-clean-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${maven-compiler-plugin.source.version}</source>
+            <target>${maven-compiler-plugin.target.version}</target>
+            <encoding>${project.build.sourceEncoding}</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${maven-dependency-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven-deploy-plugin.version}</version>
+          <!-- From http://stackoverflow.com/questions/14013644/hosting-a-maven-repository-on-github -->
+          <configuration>
+            <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>${maven-ear-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-eclipse-plugin</artifactId>
+          <version>${maven-eclipse-plugin.version}</version>
+          <configuration>
+            <downloadSources>true</downloadSources>
+            <downloadJavadocs>true</downloadJavadocs>
+            <!-- To overcome http://stackoverflow.com/questions/2544422/maven-eclipse-does-not-add-a-dependency -->
+            <ajdtVersion>none</ajdtVersion>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-ejb-plugin</artifactId>
+          <version>${maven-ejb-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>${findbugs-maven-plugin.version}</version>
+          <configuration>
+            <!-- NOTE: Changes must be duplicated to <report/plugins> block! -->
+            <effort>${findbugs.effort}</effort>
+            <failOnError>${findbugs.failOnError}</failOnError>
+            <fork>${findbugs.fork}</fork>
+            <includeTests>${findbugs.includeTests}</includeTests>
+            <jvmArgs>${findbugs.jvmArgs}</jvmArgs>
+            <maxHeap>${findbugs.maxHeap}</maxHeap>
+            <maxRank>${findbugs.maxRank}</maxRank>
+            <threshold>${findbugs.threshold}</threshold>
+            <timeout>${findbugs.timeout}</timeout>
+            <skip>${findbugs.skip}</skip>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${maven-install-plugin.version}</version>
+          <configuration>
+            <createChecksum>true</createChecksum>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin.version}</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+              </manifest>
+              <!-- Add project and build metadata to the artifact jar's MANIFEST.MF -->
+              <manifestEntries>
+                <!-- Maven magic values, see http://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Available_Variables -->
+                <Artifact-Group-Id>${project.groupId}</Artifact-Group-Id>
+                <Artifact-Id>${project.artifactId}</Artifact-Id>
+                <Artifact-Version>${project.version}</Artifact-Version>
+                <Artifact-Build-Time>${maven.build.timestamp}</Artifact-Build-Time>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${maven-javadoc-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>${maven-plugin-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-rar-plugin</artifactId>
+          <version>${maven-rar-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>${maven-shade-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${maven-site-plugin.version}</version>
+          <executions>
+            <execution>
+              <!-- To be ready for Maven 3, see -->
+              <!-- http://maven.apache.org/plugins/maven-site-plugin/maven-3.html#Site_descriptor_attachment -->
+              <id>attach-descriptor</id>
+              <goals>
+                <goal>attach-descriptor</goal>
+              </goals>
+            </execution>
+          </executions>
+          <dependencies>
+            <dependency>
+              <!-- To use the include macro -->
+              <!-- http://doxia-include.sourceforge.net/ -->
+              <groupId>org.tinyjee.dim</groupId>
+              <artifactId>doxia-include-macro</artifactId>
+              <version>1.1</version>
+            </dependency>
+            <dependency>
+              <!-- This dependency enables Confluence notation in auxiliary documentation, http://maven.apache.org/doxia/modules/index.html#Confluence -->
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-module-confluence</artifactId>
+              <version>${doxia-module-confluence.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-module-xhtml</artifactId>
+              <version>${doxia-module-xhtml.version}</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+
+        <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <version>${site-maven-plugin.version}</version>
+          <configuration>
+            <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+            <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+            <branch>refs/heads/master</branch>                       <!-- remote branch name -->
+            <includes>
+              <include>**/*</include>
+            </includes>
+            <repositoryName>${github-mvn-snapshot-repo}</repositoryName>      <!-- github repo name -->
+            <repositoryOwner>${github-repo-owner}</repositoryOwner>    <!-- github username  -->
+            <merge>true</merge>
+          </configuration>
+          <executions>
+            <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+            <execution>
+              <goals>
+                <goal>site</goal>
+              </goals>
+              <phase>deploy</phase>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${maven-source-plugin.version}</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat6-maven-plugin</artifactId>
+          <version>${tomcat6-maven-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>${tomcat7-maven-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin.version}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${maven-war-plugin.version}</version>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>${maven-assembly-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${maven-assembly-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>fmi-os-release</id>
+      <build>
+        <pluginManagement>
+          <plugins>
+          <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <version>${site-maven-plugin.version}</version>
+            <configuration>
+              <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+              <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+              <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+              <branch>refs/heads/master</branch>                       <!-- remote branch name -->
+              <includes>
+                <include>**/*</include>
+              </includes>
+              <repositoryName>${github-mvn-release-repo}</repositoryName>      <!-- github repo name -->
+              <repositoryOwner>${github-repo-owner}</repositoryOwner>    <!-- github username  -->
+              <merge>true</merge>
+            </configuration>
+          </plugin>
+        </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
