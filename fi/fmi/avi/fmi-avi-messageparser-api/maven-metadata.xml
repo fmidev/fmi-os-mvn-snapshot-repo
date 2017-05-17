@@ -3,10 +3,9 @@
   <groupId>fi.fmi.avi</groupId>
   <artifactId>fmi-avi-messageparser-api</artifactId>
   <versioning>
-    <release>1.5.1</release>
     <versions>
-      <version>1.5.1</version>
+      <version>1.5.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170427131104</lastUpdated>
+    <lastUpdated>20170517142719</lastUpdated>
   </versioning>
 </metadata>
