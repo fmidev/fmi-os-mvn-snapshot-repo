@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-messageparser</artifactId>
   <versioning>
     <versions>
-      <version>0.2.1-SNAPSHOT</version>
+      <version>0.2.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170428094954</lastUpdated>
+    <lastUpdated>20170517142745</lastUpdated>
   </versioning>
 </metadata>
