@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>fi.fmi.avi.converter</groupId>
+  <artifactId>fmi-avi-messageconverter-base</artifactId>
+  <versioning>
+    <versions>
+      <version>1.7.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170727131017</lastUpdated>
+  </versioning>
+</metadata>
