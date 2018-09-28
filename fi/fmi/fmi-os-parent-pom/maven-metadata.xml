@@ -4,8 +4,8 @@
   <artifactId>fmi-os-parent-pom</artifactId>
   <versioning>
     <versions>
-      <version>0.8.1-SNAPSHOT</version>
+      <version>0.8.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20180928104249</lastUpdated>
+    <lastUpdated>20180928213614</lastUpdated>
   </versioning>
 </metadata>
