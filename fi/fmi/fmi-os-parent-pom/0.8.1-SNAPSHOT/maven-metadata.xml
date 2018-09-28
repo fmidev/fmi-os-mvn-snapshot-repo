@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi</groupId>
+  <artifactId>fmi-os-parent-pom</artifactId>
+  <version>0.8.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20180928.104249</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20180928104249</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.8.1-20180928.104249-1</value>
+        <updated>20180928104249</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
