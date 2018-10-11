@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fi.fmi</groupId>
+    <artifactId>fmi-os-parent-pom</artifactId>
+    <version>0.8.1</version>
+  </parent>
+
+  <groupId>fi.fmi</groupId>
+  <artifactId>fmi-codestyle-java</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>FMI Java Code Style Rules</name>
+  <description>
+    FMI Java Code Style Rules.
+    This project is NOT intended to be dependency of a Maven project.
+    Instead, it should be added as a dependency of a Maven plugin, preferably in project's parent pom.
+  </description>
+  <url>https://github.com/${github-repo-owner}/${project.artifactId}</url>
+
+  <scm>
+    <connection>${scm-url}</connection>
+    <developerConnection>${scm-url}</developerConnection>
+    <url>${scm-web-url}</url>
+    <tag>HEAD</tag>
+  </scm>
+</project>
