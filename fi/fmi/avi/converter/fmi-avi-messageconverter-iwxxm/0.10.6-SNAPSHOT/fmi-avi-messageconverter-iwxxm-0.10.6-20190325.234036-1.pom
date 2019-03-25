@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <parent>
+    <groupId>fi.fmi</groupId>
+    <artifactId>fmi-os-parent-pom</artifactId>
+     <version>0.8.1</version>
+  </parent>
+  
+  <modelVersion>4.0.0</modelVersion>
+
+  <description>Aviation weather message conversions - IWXXM module</description>
+  <groupId>fi.fmi.avi.converter</groupId>
+  <artifactId>fmi-avi-messageconverter-iwxxm</artifactId>
+  <version>0.10.6-SNAPSHOT</version>
+
+  <scm>
+    <connection>scm:git:https://github.com/fmidev/fmi-avi-messageconverter-iwxxm.git</connection>
+    <developerConnection>scm:git:https://github.com/fmidev/fmi-avi-messageconverter-iwxxm.git</developerConnection>
+    <url>https://github.com/fmidev/fmi-avi-messageconverter-iwxxm</url>
+    <tag>HEAD</tag>
+  </scm>
+  
+  <dependencies>
+    <dependency>
+      <groupId>fi.fmi.avi.converter</groupId>
+      <artifactId>fmi-avi-messageconverter</artifactId>
+      <version>3.4.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-iwxxm211</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-wmo-collect2014</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sf.saxon</groupId>
+      <artifactId>Saxon-HE</artifactId>
+      <version>9.8.0-12</version>
+    </dependency>
+
+
+    <!-- Need for exposing the com.sum internal NamespacePrefixMapper classes -->
+    <dependency>
+      <groupId>com.googlecode.jaxb-namespaceprefixmapper-interfaces</groupId>
+      <artifactId>JAXBNamespacePrefixMapper</artifactId>
+      <version>2.2.4</version>
+    </dependency>
+    
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+    </dependency>
+    
+     <!-- For JUnit tests -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.unitils</groupId>
+      <artifactId>unitils-core</artifactId>
+      <version>3.4.6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>2.8.9</version>
+      <scope>test</scope>
+    </dependency>
+     <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <!--
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+-->
+</project>
