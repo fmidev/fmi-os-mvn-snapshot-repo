@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>fi.fmi.xmlmodel</groupId>
+  <artifactId>fmi-avi-xmlmodel-iwxxm211</artifactId>
+  <versioning>
+    <versions>
+      <version>1.5-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200914101816</lastUpdated>
+  </versioning>
+</metadata>
