@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-xmlmodel-xmldsig11</artifactId>
   <versioning>
     <versions>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.5-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20180126063945</lastUpdated>
+    <lastUpdated>20200914101830</lastUpdated>
   </versioning>
 </metadata>
