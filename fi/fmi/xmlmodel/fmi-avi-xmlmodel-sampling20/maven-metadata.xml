@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-xmlmodel-sampling20</artifactId>
   <versioning>
     <versions>
-      <version>1.1-SNAPSHOT</version>
+      <version>1.5-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20180126063843</lastUpdated>
+    <lastUpdated>20200914101641</lastUpdated>
   </versioning>
 </metadata>
