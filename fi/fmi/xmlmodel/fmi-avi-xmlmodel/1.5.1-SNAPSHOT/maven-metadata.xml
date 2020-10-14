@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.xmlmodel</groupId>
+  <artifactId>fmi-avi-xmlmodel</artifactId>
+  <version>1.5.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20201014.215620</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20201014215620</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.5.1-20201014.215620-1</value>
+        <updated>20201014215620</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
