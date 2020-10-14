@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-xmlmodel-gml32</artifactId>
   <versioning>
     <versions>
-      <version>1.5-SNAPSHOT</version>
+      <version>1.5.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20201014045327</lastUpdated>
+    <lastUpdated>20201014220000</lastUpdated>
   </versioning>
 </metadata>
