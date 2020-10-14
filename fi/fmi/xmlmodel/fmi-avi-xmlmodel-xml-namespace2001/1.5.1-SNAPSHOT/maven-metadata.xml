@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.xmlmodel</groupId>
+  <artifactId>fmi-avi-xmlmodel-xml-namespace2001</artifactId>
+  <version>1.5.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20201014.215701</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20201014215701</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.5.1-20201014.215701-1</value>
+        <updated>20201014215701</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.5.1-20201014.215701-1</value>
+        <updated>20201014215701</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>1.5.1-20201014.215701-1</value>
+        <updated>20201014215701</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
