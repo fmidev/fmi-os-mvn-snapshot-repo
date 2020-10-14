@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-xmlmodel-xlink11</artifactId>
   <versioning>
     <versions>
-      <version>1.5-SNAPSHOT</version>
+      <version>1.5.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20201014045124</lastUpdated>
+    <lastUpdated>20201014215759</lastUpdated>
   </versioning>
 </metadata>
