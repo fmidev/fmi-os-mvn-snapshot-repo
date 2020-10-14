@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>fi.fmi.xmlmodel</groupId>
+    <artifactId>fmi-avi-xmlmodel</artifactId>
+    <version>1.5.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>fmi-avi-xmlmodel-wmo-metce2013</artifactId>
+  <scm>
+    <developerConnection>${scm.root}/${project.artifactId}.git/</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <dependencies>
+   <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-xlink11</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-xml-namespace2001</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-iso19139-20070417</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>   
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-gml32</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-om20</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-wmo-opm2013</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+       <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <configuration>
+            <schemas>
+              <schema>
+                <url>http://schemas.wmo.int/metce/1.2/metce.xsd</url>
+              </schema>
+            </schemas>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+          <executions>
+            <execution>
+              <!-- Cleanup after XJC, the GML stuff should not be generated here at all (by episode) -->
+              <id>prune-gml32</id>
+              <phase>prepare-package</phase>
+              <goals>
+                <goal>run</goal>
+              </goals>
+              <configuration>
+                <target>
+                  <echo message="Pruning generated GML 3.2 ObjectFactory..." />
+                  <delete>
+                    <fileset dir="${project.basedir}/target/generated-sources/xjc/net/opengis/gml32" includes="ObjectFactory.java" />
+                    <fileset dir="${project.build.outputDirectory}/net/opengis/gml32" includes="ObjectFactory.class" />
+                    <fileset dir="${project.basedir}/target/generated-sources/xjc/wmo/opm2013" includes="ObjectFactory.java" />
+                    <fileset dir="${project.build.outputDirectory}/wmo/opm2013" includes="ObjectFactory.class" />
+                  </delete>
+                </target>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+    
+</project>
