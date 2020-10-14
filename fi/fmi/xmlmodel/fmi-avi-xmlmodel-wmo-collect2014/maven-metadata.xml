@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-xmlmodel-wmo-collect2014</artifactId>
   <versioning>
     <versions>
-      <version>1.5-SNAPSHOT</version>
+      <version>1.5.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20201014050302</lastUpdated>
+    <lastUpdated>20201014220935</lastUpdated>
   </versioning>
 </metadata>
