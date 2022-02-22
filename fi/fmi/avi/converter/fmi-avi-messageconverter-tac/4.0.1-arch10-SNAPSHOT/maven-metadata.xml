@@ -5,26 +5,26 @@
   <version>4.0.1-arch10-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20220119.231136</timestamp>
+      <timestamp>20220222.132321</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
-    <lastUpdated>20220119231136</lastUpdated>
+    <lastUpdated>20220222132321</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>4.0.1-arch10-20220119.231136-1</value>
-        <updated>20220119231136</updated>
+        <value>4.0.1-arch10-20220222.132321-1</value>
+        <updated>20220222132321</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>4.0.1-arch10-20220119.231136-1</value>
-        <updated>20220119231136</updated>
+        <value>4.0.1-arch10-20220222.132321-1</value>
+        <updated>20220222132321</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>4.0.1-arch10-20220119.231136-1</value>
-        <updated>20220119231136</updated>
+        <value>4.0.1-arch10-20220222.132321-1</value>
+        <updated>20220222132321</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
