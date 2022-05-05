@@ -3,27 +3,27 @@
   <groupId>fi.fmi.avi.avidb</groupId>
   <artifactId>avidb-schema</artifactId>
   <versioning>
-    <lastUpdated>20220505135700</lastUpdated>
+    <lastUpdated>20220505141522</lastUpdated>
     <snapshot>
-      <timestamp>20220505.135700</timestamp>
+      <timestamp>20220505.141522</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0.1-20220505.135700-1</value>
-        <updated>20220505135700</updated>
+        <value>1.0.1-20220505.141522-1</value>
+        <updated>20220505141522</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0.1-20220505.135700-1</value>
-        <updated>20220505135700</updated>
+        <value>1.0.1-20220505.141522-1</value>
+        <updated>20220505141522</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.0.1-20220505.135700-1</value>
-        <updated>20220505135700</updated>
+        <value>1.0.1-20220505.141522-1</value>
+        <updated>20220505141522</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
