@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fi.fmi</groupId>
+    <artifactId>fmi-os-parent-pom</artifactId>
+    <version>0.8.2</version>
+  </parent>
+
+  <groupId>fi.fmi.avi.avidb</groupId>
+  <artifactId>avidb-schema</artifactId>
+  <version>1.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>AVIDB schema</name>
+  <description>
+    Aviation message database schema
+  </description>
+
+  <scm>
+    <connection>${scm-url}</connection>
+    <developerConnection>${scm-url}</developerConnection>
+    <url>${scm-web-url}</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <schema-dir>fi/fmi/avi/avidb/schema</schema-dir>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>postgresql</directory>
+        <targetPath>${schema-dir}/postgresql</targetPath>
+      </resource>
+      <resource>
+        <directory>h2</directory>
+        <targetPath>${schema-dir}/h2</targetPath>
+      </resource>
+    </resources>
+  </build>
+
+</project>
