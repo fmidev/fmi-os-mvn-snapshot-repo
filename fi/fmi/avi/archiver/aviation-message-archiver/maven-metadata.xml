@@ -4,8 +4,8 @@
   <artifactId>aviation-message-archiver</artifactId>
   <versioning>
     <versions>
-      <version>0.1.0-SNAPSHOT</version>
+      <version>1.0.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20220513104711</lastUpdated>
+    <lastUpdated>20220516103210</lastUpdated>
   </versioning>
 </metadata>
