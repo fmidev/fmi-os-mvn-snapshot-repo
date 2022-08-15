@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>fi.fmi</groupId>
+    <artifactId>fmi-os-parent-pom</artifactId>
+    <version>0.8.2</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fi.fmi.avi.converter</groupId>
+  <artifactId>fmi-avi-messageconverter-bom</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>Aviation message converter - BOM</name>
+  <description>Bill of materials for the Aviation weather message conversions library.</description>
+
+  <url>https://github.com/${github-repo-owner}/${project.artifactId}</url>
+  <organization>
+    <name>FMI OpenSource community</name>
+    <url>http://ilmatieteenlaitos.fi</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <comments>
+        Copyright (c) 2022 Finnish Meteorological Institute
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+      </comments>
+      <distribution>repo</distribution>
+      <name>MIT License</name>
+      <url />
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>${scm-url}</connection>
+    <developerConnection>${scm-url}</developerConnection>
+    <url>${scm-web-url}</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <fmi-avi-messageconverter.version>6.1.1-SNAPSHOT</fmi-avi-messageconverter.version>
+    <fmi-avi-messageconverter-iwxxm.version>4.1.1-SNAPSHOT</fmi-avi-messageconverter-iwxxm.version>
+    <fmi-avi-messageconverter-tac.version>5.2.0-SNAPSHOT</fmi-avi-messageconverter-tac.version>
+
+    <fmi-avi-messageconverter.release-url>https://github.com/fmidev/fmi-avi-messageconverter/releases/tag/fmi-avi-messageconverter-${fmi-avi-messageconverter.version}</fmi-avi-messageconverter.release-url>
+    <fmi-avi-messageconverter.snapshot-branch>main</fmi-avi-messageconverter.snapshot-branch>
+    <fmi-avi-messageconverter-iwxxm.release-url>https://github.com/fmidev/fmi-avi-messageconverter-iwxxm/releases/tag/fmi-avi-messageconverter-iwxxm-${fmi-avi-messageconverter-iwxxm.version}</fmi-avi-messageconverter-iwxxm.release-url>
+    <fmi-avi-messageconverter-iwxxm.snapshot-branch>main</fmi-avi-messageconverter-iwxxm.snapshot-branch>
+    <fmi-avi-messageconverter-tac.release-url>https://github.com/fmidev/fmi-avi-messageconverter-tac/releases/tag/fmi-avi-messageconverter-tac-${fmi-avi-messageconverter-tac.version}</fmi-avi-messageconverter-tac.release-url>
+    <fmi-avi-messageconverter-tac.snapshot-branch>main</fmi-avi-messageconverter-tac.snapshot-branch>
+    <doc.msg.generated>Generated - DO NOT EDIT! Instead, edit sources under src/doc directory.</doc.msg.generated>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>fi.fmi.avi.converter</groupId>
+        <artifactId>fmi-avi-messageconverter</artifactId>
+        <version>${fmi-avi-messageconverter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fi.fmi.avi.converter</groupId>
+        <artifactId>fmi-avi-messageconverter-iwxxm</artifactId>
+        <version>${fmi-avi-messageconverter-iwxxm.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>fi.fmi.avi.converter</groupId>
+        <artifactId>fmi-avi-messageconverter-tac</artifactId>
+        <version>${fmi-avi-messageconverter-tac.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>readme</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.basedir}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/doc</directory>
+                  <includes>
+                    <include>README.md</include>
+                  </includes>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+              <encoding>UTF-8</encoding>
+              <useDefaultDelimiters>true</useDefaultDelimiters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>build-helper-regex-is-snapshot-used</id>
+            <goals>
+              <goal>regex-properties</goal>
+            </goals>
+            <configuration>
+              <regexPropertySettings>
+                <regexPropertySetting>
+                  <name>fmi-avi-messageconverter.version-url</name>
+                  <value>${fmi-avi-messageconverter.release-url}</value>
+                  <regex>/releases/tag/fmi-avi-messageconverter-.*-SNAPSHOT</regex>
+                  <replacement>/tree/${fmi-avi-messageconverter.snapshot-branch}</replacement>
+                  <failIfNoMatch>false</failIfNoMatch>
+                </regexPropertySetting>
+                <regexPropertySetting>
+                  <name>fmi-avi-messageconverter-iwxxm.version-url</name>
+                  <value>${fmi-avi-messageconverter-iwxxm.release-url}</value>
+                  <regex>/releases/tag/fmi-avi-messageconverter-iwxxm-.*-SNAPSHOT</regex>
+                  <replacement>/tree/${fmi-avi-messageconverter-iwxxm.snapshot-branch}</replacement>
+                  <failIfNoMatch>false</failIfNoMatch>
+                </regexPropertySetting>
+                <regexPropertySetting>
+                  <name>fmi-avi-messageconverter-tac.version-url</name>
+                  <value>${fmi-avi-messageconverter-tac.release-url}</value>
+                  <regex>/releases/tag/fmi-avi-messageconverter-tac-.*-SNAPSHOT</regex>
+                  <replacement>/tree/${fmi-avi-messageconverter-tac.snapshot-branch}</replacement>
+                  <failIfNoMatch>false</failIfNoMatch>
+                </regexPropertySetting>
+              </regexPropertySettings>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <!--
+            Generate documentation and include it in SCM. Requires plugin version >=3.
+            https://stackoverflow.com/a/68687685
+          -->
+          <preparationGoals>resources:copy-resources@readme scm:add -Dincludes=README.md</preparationGoals>
+          <completionGoals>resources:copy-resources@readme scm:add -Dincludes=README.md</completionGoals>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
