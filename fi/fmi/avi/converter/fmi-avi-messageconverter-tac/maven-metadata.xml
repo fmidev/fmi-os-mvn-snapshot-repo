@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-messageconverter-tac</artifactId>
   <versioning>
     <versions>
-      <version>5.2.0-SNAPSHOT</version>
+      <version>5.2.1-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20220815105123</lastUpdated>
+    <lastUpdated>20220824223214</lastUpdated>
   </versioning>
 </metadata>
