@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>fmi-avi-xmlmodel</artifactId>
+    <groupId>fi.fmi.xmlmodel</groupId>
+    <version>1.5.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>fmi-avi-xmlmodel-iso19139-20070417</artifactId>
+  <scm>
+    <developerConnection>${scm.root}/${project.artifactId}.git/</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-xlink11</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-xml-namespace2001</artifactId>
+      <version>1.5.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemas>
+            <schema>
+              <url>http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd</url>
+            </schema>
+          </schemas>
+          <episode />
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <!--
+              Due to the GMD -> GCO -> GML -> GMD cycling schema dependency, the GML 3.2 schemas
+              need to be duplicated in this project, and the JAXB classes generated for them.
+              However, we do not want to keep the GML 3.2 stuff in the created jar, because it's
+              provided by the project xmlmodel-gml32 (which depends on this project).
+            -->
+            <id>prune-gml32</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <echo message="Pruning generated GML 3.2 stuff..." />
+
+                <!-- clean the GML bindings from the generated episode file: -->
+                <xslt in="${project.build.outputDirectory}/META-INF/sun-jaxb.episode" out="${project.build.outputDirectory}/META-INF/sun-jaxb.episode.tmp" style="${project.basedir}/src/main/resources/strip-gml-bindings-from-episode.xsl" />
+
+                <!-- Delete the GML classes and replace the original episode with the edited one: -->
+                <delete>
+                  <fileset dir="${project.build.outputDirectory}/net" />
+                  <fileset dir="${project.build.outputDirectory}/META-INF" includes="sun-jaxb.episode" />
+                </delete>
+                <move file="${project.build.outputDirectory}/META-INF/sun-jaxb.episode.tmp" tofile="${project.build.outputDirectory}/META-INF/sun-jaxb.episode" />
+
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
