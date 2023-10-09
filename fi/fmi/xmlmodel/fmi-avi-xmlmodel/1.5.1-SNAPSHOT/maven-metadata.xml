@@ -2,19 +2,19 @@
 <metadata modelVersion="1.1.0">
   <groupId>fi.fmi.xmlmodel</groupId>
   <artifactId>fmi-avi-xmlmodel</artifactId>
-  <version>1.5.1-SNAPSHOT</version>
   <versioning>
+    <lastUpdated>20231009083701</lastUpdated>
     <snapshot>
-      <timestamp>20211116.225618</timestamp>
+      <timestamp>20231009.083701</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
-    <lastUpdated>20211116225618</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.5.1-20211116.225618-1</value>
-        <updated>20211116225618</updated>
+        <value>1.5.1-20231009.083701-1</value>
+        <updated>20231009083701</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
+  <version>1.5.1-SNAPSHOT</version>
 </metadata>
