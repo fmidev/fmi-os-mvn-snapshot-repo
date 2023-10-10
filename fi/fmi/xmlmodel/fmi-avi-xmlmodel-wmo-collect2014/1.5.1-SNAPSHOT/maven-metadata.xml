@@ -3,27 +3,27 @@
   <groupId>fi.fmi.xmlmodel</groupId>
   <artifactId>fmi-avi-xmlmodel-wmo-collect2014</artifactId>
   <versioning>
-    <lastUpdated>20231009083701</lastUpdated>
+    <lastUpdated>20231010083925</lastUpdated>
     <snapshot>
-      <timestamp>20231009.083701</timestamp>
+      <timestamp>20231010.083925</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.5.1-20231009.083701-1</value>
-        <updated>20231009083701</updated>
+        <value>1.5.1-20231010.083925-1</value>
+        <updated>20231010083925</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.5.1-20231009.083701-1</value>
-        <updated>20231009083701</updated>
+        <value>1.5.1-20231010.083925-1</value>
+        <updated>20231010083925</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.5.1-20231009.083701-1</value>
-        <updated>20231009083701</updated>
+        <value>1.5.1-20231010.083925-1</value>
+        <updated>20231010083925</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
