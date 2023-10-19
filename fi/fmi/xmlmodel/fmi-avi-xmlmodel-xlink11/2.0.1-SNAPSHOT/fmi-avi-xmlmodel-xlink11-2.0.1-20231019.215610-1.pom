@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>fmi-avi-xmlmodel</artifactId>
+    <groupId>fi.fmi.xmlmodel</groupId>
+    <version>2.0.1-SNAPSHOT</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>fmi-avi-xmlmodel-xlink11</artifactId>
+  <scm>
+    <developerConnection>${scm.root}/${project.artifactId}.git/</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
+  <dependencies>
+    <dependency>
+      <groupId>fi.fmi.xmlmodel</groupId>
+      <artifactId>fmi-avi-xmlmodel-xml-namespace2001</artifactId>
+      <version>2.0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.jvnet.jaxb2.maven2</groupId>
+        <artifactId>maven-jaxb2-plugin</artifactId>
+        <configuration>
+          <schemas>
+            <schema>
+              <!-- this will be redirected to a local files by the catalog -->
+             <url>http://www.w3.org/1999/xlink.xsd</url>
+            </schema>
+          </schemas>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
