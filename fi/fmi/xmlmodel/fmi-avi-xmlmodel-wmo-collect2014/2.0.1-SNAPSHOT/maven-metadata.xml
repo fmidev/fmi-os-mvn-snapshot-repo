@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.xmlmodel</groupId>
+  <artifactId>fmi-avi-xmlmodel-wmo-collect2014</artifactId>
+  <versioning>
+    <lastUpdated>20231019215610</lastUpdated>
+    <snapshot>
+      <timestamp>20231019.215610</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>2.0.1-20231019.215610-1</value>
+        <updated>20231019215610</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>2.0.1-20231019.215610-1</value>
+        <updated>20231019215610</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>2.0.1-20231019.215610-1</value>
+        <updated>20231019215610</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>2.0.1-SNAPSHOT</version>
+</metadata>
