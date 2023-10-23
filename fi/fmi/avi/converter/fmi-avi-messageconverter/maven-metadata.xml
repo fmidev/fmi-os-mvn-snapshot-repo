@@ -4,8 +4,8 @@
   <artifactId>fmi-avi-messageconverter</artifactId>
   <versioning>
     <versions>
-      <version>7.0.0-beta2-SNAPSHOT</version>
+      <version>7.0.0-beta3-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20231023085751</lastUpdated>
+    <lastUpdated>20231023231213</lastUpdated>
   </versioning>
 </metadata>
