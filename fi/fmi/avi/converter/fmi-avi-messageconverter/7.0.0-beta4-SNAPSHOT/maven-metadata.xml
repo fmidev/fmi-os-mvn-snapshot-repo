@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.avi.converter</groupId>
+  <artifactId>fmi-avi-messageconverter</artifactId>
+  <versioning>
+    <lastUpdated>20231115001210</lastUpdated>
+    <snapshot>
+      <timestamp>20231115.001210</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>7.0.0-beta4-20231115.001210-1</value>
+        <updated>20231115001210</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>7.0.0-beta4-20231115.001210-1</value>
+        <updated>20231115001210</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>7.0.0-beta4-20231115.001210-1</value>
+        <updated>20231115001210</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>7.0.0-beta4-SNAPSHOT</version>
+</metadata>
