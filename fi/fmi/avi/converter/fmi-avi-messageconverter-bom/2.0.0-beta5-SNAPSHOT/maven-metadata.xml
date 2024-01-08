@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.avi.converter</groupId>
+  <artifactId>fmi-avi-messageconverter-bom</artifactId>
+  <versioning>
+    <lastUpdated>20240108225010</lastUpdated>
+    <snapshot>
+      <timestamp>20240108.225010</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>2.0.0-beta5-20240108.225010-1</value>
+        <updated>20240108225010</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>2.0.0-beta5-SNAPSHOT</version>
+</metadata>
