@@ -3,33 +3,33 @@
   <groupId>fi.fmi.avi.archiver</groupId>
   <artifactId>aviation-message-archiver</artifactId>
   <versioning>
-    <lastUpdated>20240208093210</lastUpdated>
+    <lastUpdated>20240208101741</lastUpdated>
     <snapshot>
-      <timestamp>20240208.093210</timestamp>
+      <timestamp>20240208.101741</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.1.1-20240208.093210-1</value>
-        <updated>20240208093210</updated>
+        <value>1.1.1-20240208.101741-1</value>
+        <updated>20240208101741</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.1.1-20240208.093210-1</value>
-        <updated>20240208093210</updated>
+        <value>1.1.1-20240208.101741-1</value>
+        <updated>20240208101741</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.1.1-20240208.093210-1</value>
-        <updated>20240208093210</updated>
+        <value>1.1.1-20240208.101741-1</value>
+        <updated>20240208101741</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>bundle</classifier>
         <extension>jar</extension>
-        <value>1.1.1-20240208.093210-1</value>
-        <updated>20240208093210</updated>
+        <value>1.1.1-20240208.101741-1</value>
+        <updated>20240208101741</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
