@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fi.fmi.avi.archiver</groupId>
+  <artifactId>aviation-message-archiver</artifactId>
+  <versioning>
+    <lastUpdated>20251009093210</lastUpdated>
+    <snapshot>
+      <timestamp>20251009.093210</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.2.1-20251009.093210-1</value>
+        <updated>20251009093210</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.2.1-20251009.093210-1</value>
+        <updated>20251009093210</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>1.2.1-20251009.093210-1</value>
+        <updated>20251009093210</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>1.2.1-SNAPSHOT</version>
+</metadata>
