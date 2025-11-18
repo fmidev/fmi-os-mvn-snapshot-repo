@@ -3,16 +3,16 @@
   <groupId>fi.fmi.avi.converter</groupId>
   <artifactId>fmi-avi-messageconverter-bom</artifactId>
   <versioning>
-    <lastUpdated>20251111100603</lastUpdated>
+    <lastUpdated>20251118101152</lastUpdated>
     <snapshot>
-      <timestamp>20251111.100603</timestamp>
+      <timestamp>20251118.101152</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>3.0.0-20251111.100603-1</value>
-        <updated>20251111100603</updated>
+        <value>3.0.0-20251118.101152-1</value>
+        <updated>20251118101152</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
