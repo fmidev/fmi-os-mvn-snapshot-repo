@@ -3,27 +3,27 @@
   <groupId>fi.fmi.avi.converter</groupId>
   <artifactId>fmi-avi-messageconverter-tac</artifactId>
   <versioning>
-    <lastUpdated>20260112143210</lastUpdated>
+    <lastUpdated>20260112143855</lastUpdated>
     <snapshot>
-      <timestamp>20260112.143210</timestamp>
+      <timestamp>20260112.143855</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>7.1.1-20260112.143210-1</value>
-        <updated>20260112143210</updated>
+        <value>7.1.1-20260112.143855-1</value>
+        <updated>20260112143855</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>7.1.1-20260112.143210-1</value>
-        <updated>20260112143210</updated>
+        <value>7.1.1-20260112.143855-1</value>
+        <updated>20260112143855</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>7.1.1-20260112.143210-1</value>
-        <updated>20260112143210</updated>
+        <value>7.1.1-20260112.143855-1</value>
+        <updated>20260112143855</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
