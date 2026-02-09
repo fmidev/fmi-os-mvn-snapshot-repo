@@ -3,27 +3,27 @@
   <groupId>fi.fmi.avi.converter</groupId>
   <artifactId>fmi-avi-messageconverter-iwxxm</artifactId>
   <versioning>
-    <lastUpdated>20260202132027</lastUpdated>
+    <lastUpdated>20260209112136</lastUpdated>
     <snapshot>
-      <timestamp>20260202.132027</timestamp>
+      <timestamp>20260209.112136</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>6.2.1-20260202.132027-1</value>
-        <updated>20260202132027</updated>
+        <value>6.2.1-20260209.112136-1</value>
+        <updated>20260209112136</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>6.2.1-20260202.132027-1</value>
-        <updated>20260202132027</updated>
+        <value>6.2.1-20260209.112136-1</value>
+        <updated>20260209112136</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>6.2.1-20260202.132027-1</value>
-        <updated>20260202132027</updated>
+        <value>6.2.1-20260209.112136-1</value>
+        <updated>20260209112136</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
