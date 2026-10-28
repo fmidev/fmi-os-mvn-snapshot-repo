@@ -3,27 +3,27 @@
   <groupId>fi.fmi.avi.archiver</groupId>
   <artifactId>aviation-message-archiver</artifactId>
   <versioning>
-    <lastUpdated>20260907093322</lastUpdated>
+    <lastUpdated>20261028080212</lastUpdated>
     <snapshot>
-      <timestamp>20260907.093322</timestamp>
+      <timestamp>20261028.080212</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.4.4-20260907.093322-1</value>
-        <updated>20260907093322</updated>
+        <value>1.4.4-20261028.080212-1</value>
+        <updated>20261028080212</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.4.4-20260907.093322-1</value>
-        <updated>20260907093322</updated>
+        <value>1.4.4-20261028.080212-1</value>
+        <updated>20261028080212</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.4.4-20260907.093322-1</value>
-        <updated>20260907093322</updated>
+        <value>1.4.4-20261028.080212-1</value>
+        <updated>20261028080212</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
